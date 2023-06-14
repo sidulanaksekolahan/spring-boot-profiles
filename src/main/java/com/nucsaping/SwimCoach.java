@@ -1,6 +1,7 @@
 package com.nucsaping;
 
 import jakarta.annotation.PostConstruct;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
@@ -8,9 +9,13 @@ import org.springframework.stereotype.Component;
 @Profile("dev")
 public class SwimCoach implements Coach {
 
+    @Value("${team.address}")
+    private String teamAddress;
+
     @PostConstruct
     void postConstruct() {
         System.out.println("development is running");
+        System.out.println("Address is: " + teamAddress);
     }
 
     public SwimCoach() {
