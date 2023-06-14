@@ -24,3 +24,9 @@ First is "dev", second is "prod".
 The option two will activate the profile dev.
 
 If the system property is set, the environment variable SPRING_PROFILES_ACTIVE will be ignored.
+
+**Option 3 Via property file:**
+
+**1. Run "mvn package -Dspring.profiles.active=dev" to package profile dev.**
+
+**2. java -Dspring.profiles.active=dev -jar target/spring-boot-profiles-0.0.1-SNAPSHOT.jar**
